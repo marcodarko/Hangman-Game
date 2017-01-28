@@ -1,0 +1,93 @@
+
+*{
+	color: white;
+}
+
+header{
+	padding: 20px;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/Pokemon.ttf);
+}
+
+html{
+	height: 100%;
+	background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, orange); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, orange); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, orange); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, orange);
+}
+
+h2{
+
+	font-family: Impact;
+	margin: 40px 0px;
+	font-size: 42px;
+	text-shadow: black 2px 2px 2px;
+}
+
+h1 {
+	margin: 40px 0px;
+	letter-spacing: 5px;
+	-webkit-text-stroke: 5px #1F3F9E;
+	font-family: myFirstFont;
+	 font-size: 72px;
+	background: #f1e767; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f1e767 0%, #feb645 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f1e767 0%,#feb645 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f1e767 0%,#feb645 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=0 ); /* IE6-9 */
+
+	 -webkit-background-clip: text;
+	 -webkit-text-fill-color: transparent;
+}
+
+hr{
+	border-bottom: 4px red solid;
+}
+
+.container{
+	display: block;
+	margin: 0 auto;
+    width: 50%;
+    height: auto;
+    font-family: sans-serif;
+}
+
+#currentWord li{
+	display: inline;
+	margin:2px;
+	border-bottom: 2px white solid;
+	padding: 2px;
+}
+
+#lettersUsed li{
+	display: inline;
+	margin:2px;
+	border-bottom: 2px white solid;
+	padding: 2px;
+}
+
+.container div:first-child{
+	background-image: url('../images/PokeBall.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.box{
+	box-sizing: border-box;
+	padding: 20px;
+	float: left;
+	text-align: center;
+	display: inline-block;
+	height: 300px;
+	width: 50%;
+	border: 3px solid white;
+	border-radius: 10px;
+}
