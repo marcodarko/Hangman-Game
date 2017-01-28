@@ -65,6 +65,7 @@ hr{
 	margin:2px;
 	border-bottom: 2px white solid;
 	padding: 2px;
+	min-width: 8px;
 }
 
 #lettersUsed li{
@@ -72,6 +73,7 @@ hr{
 	margin:2px;
 	border-bottom: 2px white solid;
 	padding: 2px;
+	min-width: 8px;
 }
 
 .container div:first-child{
