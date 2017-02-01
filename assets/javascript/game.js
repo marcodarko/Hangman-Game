@@ -18,47 +18,55 @@ document.getElementById("spanName").innerHTML=displayList.join("");
 // GAME OBJECT
 var game={
 
-	winCount: 0,
+	winCount: 0, 
 	gamesWon: 0,
 	loseCount: WordChosen.length+3,
 	winGoal:  WordChosen.length,
 	startGame: function(Guess, WordChosen){
+		// Checks that input is a letter from a-z
 		if (/^[a-z]$/i.test(Guess)){
-			for(var i=0;i<WordChosen.length;i++){
-				if(Guess === WordChosen[i].toLowerCase){
-				displayList.splice(i,1,Guess);
-				console.log(displayList);
-				displayList.toString();
-	    		document.getElementById("spanName").innerHTML = displayList.join(" ");
-				// keeps track of correct guesses
-				this.winCount++;
-				console.log("Letters guess correctly so far: "+ this.winCount);
-			}
+			// Check if letter exists in word.
+			if (-1 <= WordChosen.indexOf(Guess)) {
+				//The letter exists!
+				for(var i=0;i<WordChosen.length;i++){
+				if(Guess === WordChosen[i].toLowerCase()){
+					displayList.splice(i,1,Guess);
+					console.log(displayList);
+					//displayList.toString();
+		    		document.getElementById("spanName").innerHTML = displayList.join(" ");
+					// keeps track of correct guesses
+					this.winCount++;
+					console.log("Letters guess correctly so far: "+ this.winCount);
+				}
 
-			else if(Guess !== WordChosen[i].toLowerCase()){
+				
+					if(this.winCount == this.winGoal){
+						this.gamesWon++;
+						alert("CONGRATS");
+						console.log("YOU GUESSED IT!");
+						this.gamesWon.toString();
+						document.getElementById("wins").innerHTML = this.gamesWon;
+					}
+					else if(this.loseCount==0){
+						alert("YOU LOSE");
+					}
+
+				}
+
+				} 
+				else {
+				// The letter is not in the word.
 				this.loseCount--;
-				console.log("Incorrent Letter: "+ Guess);
-				IncorrectList.splice(i,1,Guess);
-				console.log(IncorrectList);
-				IncorrectList.toString();
-	    		document.getElementById("para").innerHTML = displayList.join(" ");
-				// var node = document.createElement("LI");
-			 //    var textnode = document.createTextNode(Guess);
-			 //    node.appendChild(textnode);
-				// document.getElementById("lettersUsed").appendChild(node);
+					console.log("Incorrent Letter: "+ Guess);
+					// If Guess doesn't exist in IncorrectList, then add it to the list.
+					if (-1 == IncorrectList.indexOf(Guess)) {
+						IncorrectList.splice(i,1,Guess);
+					}
+					console.log(IncorrectList);
+					IncorrectList.toString();
+		    		document.getElementById("para").innerHTML = displayList.join(" ");
 			}
-				if(this.winCount == this.winGoal){
-					this.gamesWon++;
-					alert("CONGRATS");
-					console.log("YOU GUESSED IT!");
-					this.gamesWon.toString();
-					document.getElementById("wins").innerHTML = this.gamesWon;
-				}
-				else if(this.loseCount==0){
-					alert("YOU LOSE");
-				}
-
-		}
+			
 		}
 		else{
 			alert("Must type a valid letter");
