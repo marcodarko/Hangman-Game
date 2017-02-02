@@ -39,6 +39,20 @@ var game={
 					console.log("Letters guess correctly so far: "+ this.winCount);
 				}
 
+				else {
+					// The letter is not in the word.
+					if (-1 == IncorrectList.indexOf(Guess) && -1 == WordChosen.indexOf(Guess)) {
+				    this.loseCount--;
+					console.log("Incorrent Letter: "+ Guess);
+					// If Guess doesn't exist in IncorrectList, then add it to the list.
+					//if (-1 == IncorrectList.indexOf(Guess)) {
+					//IncorrectList.splice(i,1,Guess);
+					IncorrectList.push(Guess);
+					console.log(IncorrectList);
+					IncorrectList.toString();
+			    	document.getElementById("para").innerHTML = IncorrectList.join(" ");
+			    	}
+				}
 				
 					if(this.winCount == this.winGoal){
 						this.gamesWon++;
@@ -54,18 +68,19 @@ var game={
 				}
 
 				} 
-				else {
-				// The letter is not in the word.
-				this.loseCount--;
-					console.log("Incorrent Letter: "+ Guess);
-					// If Guess doesn't exist in IncorrectList, then add it to the list.
-					if (-1 == IncorrectList.indexOf(Guess)) {
-						IncorrectList.splice(i,1,Guess);
-					}
-					console.log(IncorrectList);
-					IncorrectList.toString();
-		    		document.getElementById("para").innerHTML = displayList.join(" ");
-			}
+				// else {
+				// 	// The letter is not in the word.
+				//     this.loseCount--;
+				// 	console.log("Incorrent Letter: "+ Guess);
+				// 	// If Guess doesn't exist in IncorrectList, then add it to the list.
+				// 	//if (-1 == IncorrectList.indexOf(Guess)) {
+				// 	//IncorrectList.splice(i,1,Guess);
+				// 	IncorrectList.push(Guess);
+				// 	console.log(IncorrectList);
+				// 	IncorrectList.toString();
+			 //    	document.getElementById("para").innerHTML = displayList.join(" ");
+			 //    	//}
+				// }
 			
 		}
 		else{
