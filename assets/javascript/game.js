@@ -7,6 +7,7 @@ var WordChosen = WordList[Math.floor(Math.random() * WordList.length)];
 console.log("Word Chosen is: "+WordChosen);
 var displayList=[];
 var IncorrectList=[];
+var x = document.getElementById("pika");
 
 for(var i=0;i<WordChosen.length;i++){
 		displayList.push(" _ ");
@@ -33,6 +34,7 @@ var game={
 					displayList.splice(i,1,Guess);
 					console.log(displayList);
 					//displayList.toString();
+					x.play();
 		    		document.getElementById("spanName").innerHTML = displayList.join(" ");
 					// keeps track of correct guesses
 					this.winCount++;

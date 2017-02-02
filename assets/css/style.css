@@ -52,6 +52,10 @@ hr{
 	border-bottom: 4px red solid;
 }
 
+#pika{
+	visibility: hidden;
+}
+
 .container{
 	display: block;
 	margin: 0 auto;
